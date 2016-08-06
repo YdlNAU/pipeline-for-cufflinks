@@ -49,7 +49,7 @@ foreach my $fileName(@fileNames){
 		}
 	close IN;close OUT;
 	
-	$state_flag=system("mv $fileName /gpfs1/jobdata/dlyu/fpkmStore/;rm -r $fileName");
+	$state_flag=system("mv ./$fileName/$outfileName /gpfs1/jobdata/dlyu/fpkmStore/;rm -r $fileName");
 	die "error :$?" unless $state_flag==0;
 	
 	print "\n",cwd, "\t This is the current working dir.Now we return to the primary dir!\n";
